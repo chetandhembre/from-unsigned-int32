@@ -10,27 +10,43 @@ Also checkout [to-unsigned-int32](https://github.com/chetandhembre/to-unsigned-i
 ```
 npm i from-unsigned-int32
 ```
-## Usage
+## API
+
+1. Async API
+
+
+  ```js
+  var fromUInt32 = require('from-unsigned-int32')
+
+  fromUInt32(buffr /*<Buffer 00 20 00 00 00 00 00 0c>*/, 4, function (err, res) {
+  	console.log(res) //12
+  })
+
+  ```
+  `buffr` should be Buffer.
+
+  `offset` this is optional parameter default is 0.
+
+  `callback` get two arguments:
+
+  1. An error object.
+
+  2. number (base 10).
+
+2. Sync API
+
 ```js
 var fromUInt32 = require('from-unsigned-int32')
 
-fromUInt32(buffr /*<Buffer 00 00 00 0c>*/, function (err, res) {
-	console.log(res) //12
-})
+console.log(fromUInt32.fromUInt32Sync(buffr /*<Buffer 00 20 00 00 00 00 00 0c>*/), 4)  //12
 
 ```
-Module only support async api. 
+`buffr` should be Buffer.
 
-`buffr` should be Buffer with length 4.
+`offset` this is optional parameter default is 0.
 
-`callback` get two arguments:
-
-1. An error object.
-
-2. number (base 10).
+returns integer
 
 ## licence
-===
+
 MIT
-
-
