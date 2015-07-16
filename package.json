@@ -1,6 +1,6 @@
 {
   "name": "from-unsigned-int32",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "convert 32 bit buffer to integer",
   "main": "index.js",
   "scripts": {
